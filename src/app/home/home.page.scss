@@ -1,27 +1,65 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-content{
+  background: blue;
+}
+ion-slides{
+  background: black;
+  height: 100%;
+  max-width: 800px;
 }
 
-#container strong {
+.swiper-slide {
+  display: block;
+  background-color: white;
+  padding: 20px  0px 20px 0px;
+  //margin: 20px 20px 20px 20px;
+  
+}
+ion-slide > h2{
+  color: var(--ion-color-primary);
+}
+ion-slide > p{
+  font-style: italic;
+  font-size: 15px;
+  padding: 1em 1em 1em 1em;
+  
+}
+
+ion-slide >ion-icon[name="close"]{
+   float: right;
+  justify-content:flex-end;
+  color: var(--ion-color-danger);
   font-size: 20px;
-  line-height: 26px;
+  margin: 0px;
+
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.gameThrones{
+  font-size: 22px;
+  color: var(--color-game);
+  text-align: center;
+  
+}
+.harry{
+  font-size: 22px;
+  color: var(--color-harry);
+  text-align: center;
 }
 
-#container a {
-  text-decoration: none;
+ion-slide >img{
+  height: 50%;
+  margin: auto;
 }
+
+.contenGame{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contentIcon{
+  flex-direction: row-reverse;
+  margin-right: 4%;
+  display: flex;
+}
+ 
+ 

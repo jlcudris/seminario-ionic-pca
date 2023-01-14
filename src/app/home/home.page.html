@@ -1,20 +1,65 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpt">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <h1>Titulo 1</h1>
+      <h2>Sub Titulo</h2>
+      <img src="https://www.zooplus.es/magazine/wp-content/uploads/2022/05/Cuanto-pesa-un-gato-2.jpeg" alt="">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </p>
+    </ion-slide>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <h1>Titulo 2</h1>
+      <h2>Sub Titulo</h2>
+      <img src="https://www.zooplus.es/magazine/wp-content/uploads/2022/05/Cuanto-pesa-un-gato-2.jpeg" alt="">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-icon name="close"></ion-icon>
+      <h1>Titulo 3</h1>
+      <h2>Sub Titulo</h2>
+      <img src="https://www.zooplus.es/magazine/wp-content/uploads/2022/05/Cuanto-pesa-un-gato-2.jpeg" alt="">
+      <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      </p>
+    </ion-slide>
+    <!-- nuevos slides -->
+    <ion-slide>
+      <div class="contentIcon">
+        <ion-icon name="close"></ion-icon>
+      </div>
+
+      <div class="contenGame">
+        <h1 class="gameThrones">The game of thrones</h1>
+      </div>
+      
+      <img src="assets/gamet.jpg" alt="">
+      <p>
+        El libro mejor vendido de la serie "A Song of Ice and Fire" escrito por George R.R, es llevado a la pantalla chica cuando HBO decide recrear esta historia épica de fantasía
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="contentIcon">
+        <ion-icon name="close"></ion-icon>
+      </div>
+
+      <div class="contenGame">
+        <h1 class="harry">Harry Potter</h1>
+      </div>
+      
+      <img src="assets/harry.jpg" alt="">
+      <p>
+        El día de su cumpleaños, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos.
+      </p>
+    </ion-slide>
+
+  </ion-slides>
 </ion-content>
