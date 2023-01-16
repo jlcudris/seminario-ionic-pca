@@ -1,9 +1,9 @@
-<!-- <ion-content>
+<ion-content>
   <ion-slides pager="true" [options]="slideOpt">
 
-    <ion-slide *ngFor="let slide of slides_nuevos">
+    <ion-slide *ngFor="let slide of slides_nuevos" class="{{slide.class}}">
       <div class="contentIcon">
-        <ion-icon name="close"></ion-icon>
+        <ion-icon name="close" (click)="finish()"></ion-icon>
       </div>
 
       <div class="contenGame">
@@ -17,6 +17,4 @@
     </ion-slide>
 
   </ion-slides>
-</ion-content> -->
-
-<h1 style="color: aliceblue;">Hola soy el home</h1>
+</ion-content>

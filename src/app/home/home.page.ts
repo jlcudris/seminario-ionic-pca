@@ -14,7 +14,17 @@ export class HomePage {
     speed:400
   }
 
-  slides_nuevos=[
+ /* slides_nuevos=[
+    {
+      title:"Gato 1",
+      img:"https://www.zooplus.es/magazine/wp-content/uploads/2022/05/Cuanto-pesa-un-gato-2.jpeg",
+      descripcion:"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
+    {
+      title:"Gato 2",
+      img:"https://www.zooplus.es/magazine/wp-content/uploads/2022/05/Cuanto-pesa-un-gato-2.jpeg",
+      descripcion:"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+    },
     {
       title:"The game of thrones",
       img:"assets/gamet.jpg",
@@ -25,7 +35,7 @@ export class HomePage {
       img:"assets/harry.jpg",
       descripcion:" El día de su cumpleaños, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos."
     }
-  ]
+  ] */
 
   constructor() {}
 
