@@ -1,0 +1,44 @@
+.d-flex{
+    display: flex;
+}
+.imgAvatar{
+    height: 50px;
+    width: 50px;
+    margin-left: 6px
+}
+.avatarList{
+    // --border-radius: 10px;
+    // width: 3rem;
+    // border-radius: 10px;
+    border: 2px solid #e7edfb;
+    margin-right: 6px
+}
+
+.itemList{
+    --border-radius: 10px;
+    --padding-start: 1rem;
+    --padding-end: 1rem;
+    --padding-top: 1rem;
+    --padding-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    min-height: 5rem;
+}
+.background{
+    background-color: #e7edfb;
+}
+
+.colorBack{
+    --background: #dae5ff
+}
+
+ion-content{
+    --background:#e7edfb;
+}
+
+.saltoLineatitle{
+    white-space: normal;
+}
+
+.center{
+    text-align: center;
+}

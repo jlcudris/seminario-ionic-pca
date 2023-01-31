@@ -1,0 +1,20 @@
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpt">
+
+    <ion-slide *ngFor="let slide of slides_nuevos" class="{{slide.class}}">
+      <div class="contentIcon">
+        <ion-icon name="close" (click)="finish()"></ion-icon>
+      </div>
+
+      <div class="contenGame">
+        <h1 class="harry">{{slide.title}}</h1>
+      </div>
+      
+      <img src="{{slide.img}}" alt="">
+      <p>
+        {{slide.descripcion}}
+      </p>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

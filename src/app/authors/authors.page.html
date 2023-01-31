@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar class="colorBack">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Autores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #e7edfb;">
+  <ion-list class="background">
+    <ion-item button detail="true" lines="none" class="itemList" (click)="showBooksAuthor(author)" *ngFor="let author of authors">
+      <ion-avatar class="avatarList">
+        <img alt="Silhouette of a person's head" src="{{author.photo}}" />
+      </ion-avatar>
+      <ion-label>{{author.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

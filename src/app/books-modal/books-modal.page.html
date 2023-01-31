@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar class="colorBack">
+    <div *ngIf="!mostrarInfoAutor" class="d-flex">
+      <ion-avatar class="imgAvatar">
+        <img alt="Silhouette of a person's head" src="{{author.photo}}" />
+      </ion-avatar>
+      <ion-title> {{author.name}}</ion-title>
+    </div>
+    <ion-buttons [slot]="mostrarInfoAutor ? 'start' : 'end'">
+      <ion-button (click)="closeModal()">
+        <span *ngIf="mostrarInfoAutor">
+          Cerrar
+        </span>
+        <ion-icon *ngIf="!mostrarInfoAutor" name="close-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #e7edfb;">
+  <div *ngIf="mostrarInfoAutor">
+
+    <h1 class="center">{{author.name}}</h1>
+
+    <div class="imgCenter">
+      <img class="imgAuthor" src="{{author.photo}}" alt="{{author.photo}}">
+    </div>
+
+    <ion-grid class="center">
+      <ion-row>
+        <ion-col>
+          <div class="titulo">Followers</div>
+          <div class="seguidores">{{author.followers}}</div>
+        </ion-col>
+        <ion-col>
+          <div class="titulo">Popularity</div>
+          <div class="seguidores">
+            <span *ngFor="let item of author.cantStart">
+              <ion-icon style="color: orange;" name="star"></ion-icon>
+            </span>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <div class="titulo">Generos</div>
+          <span *ngFor="let item of author.genres">
+            <ion-chip>{{item | titlecase}}</ion-chip>
+          </span>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="titulo">Ultima Actualizacion</div>
+        <span style="color: gray; font-weight: bold; font-size: 14px;">
+          {{author.updated_at | date:'dd/mm/yyyy'}}
+        </span>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="!mostrarInfoAutor">
+    <div style="display: flex; justify-content: center;">
+      <ion-avatar>
+        <img alt="Silhouette of a person's head" src="../../assets/iconoLibro.png" />
+      </ion-avatar>
+    </div>
+    <!-- <h3 style="text-align: center;">Libros <ion-icon style="top:5px" name="book-outline"></ion-icon></h3> -->
+    <ion-list class="background">
+      <ion-item button lines="none" class="itemList" *ngFor="let item of listBook">
+        <ion-avatar class="avatarList">
+          <img alt="Silhouette of a person's head" src="{{item.cover}}" />
+        </ion-avatar>
+        <div (click)="presentAlertInfo(item)">
+          <ion-label class="saltoLineatitle">{{item.name}}</ion-label>
+          <!-- <ion-chip *ngFor="let generos of item.genres">{{generos}}</ion-chip> -->
+          <div style="display: flex;">
+            <ion-label *ngFor="let generos of item.genres;let last = last"
+              style="color: gray; font-size: 14px;">{{generos}}{{last ? '' : ', '}}</ion-label>
+          </div>
+        </div>
+        <ion-icon (click)="favoriteBook(item.id)" name="heart-outline" slot="end"></ion-icon>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

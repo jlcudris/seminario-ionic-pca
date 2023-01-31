@@ -1,65 +1,43 @@
+
+ ion-avatar{
+    height: 150px;
+    width: 100%;
+ }
+
+ ion-avatar img{
+   width: 90px;
+   height: 90px;
+ }
+
+ .colorBack{
+  --background: #dae5ff
+}
+ 
+ ion-card {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+ion-card ion-card-header {
+  padding: 10px 10px;
+}
+
+ion-card ion-card-content {
+  padding: 10px 10px;
+  font-size: .8em;
+  text-transform: lowercase;
+}
+
+ion-card ion-card-title {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+ion-card  ion-icon{
+  font-size: 40px;
+}
+
 ion-content{
-  background: blue;
+  --background:#e7edfb;
 }
-ion-slides{
-  background: black;
-  height: 100%;
-  max-width: 800px;
-}
-
-.swiper-slide {
-  display: block;
-  background-color: white;
-  padding: 20px  0px 20px 0px;
-  //margin: 20px 20px 20px 20px;
-  
-}
-ion-slide > h2{
-  color: var(--ion-color-primary);
-}
-ion-slide > p{
-  font-style: italic;
-  font-size: 15px;
-  padding: 1em 1em 1em 1em;
-  
-}
-
-ion-slide >ion-icon[name="close"]{
-   float: right;
-  justify-content:flex-end;
-  color: var(--ion-color-danger);
-  font-size: 20px;
-  margin: 0px;
-
-}
-
-.gameThrones{
-  font-size: 22px;
-  color: var(--color-game);
-  text-align: center;
-  
-}
-.harry{
-  font-size: 22px;
-  color: var(--color-harry);
-  text-align: center;
-}
-
-ion-slide >img{
-  height: 50%;
-  margin: auto;
-}
-
-.contenGame{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contentIcon{
-  flex-direction: row-reverse;
-  margin-right: 4%;
-  display: flex;
-}
- 
- 

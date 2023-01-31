@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar class="colorBack">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Top 10</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="background">
+    <ion-item  lines="none" class="itemList" *ngFor="let book  of topDiez">
+      <ion-avatar class="avatarList">
+        <img alt="Silhouette of a person's head" src="{{book.cover}}" />
+      </ion-avatar>
+      <div>
+        <ion-label class="saltoLineatitle">{{book.name}}</ion-label>
+        <div style="display: flex;">
+          <ion-label *ngFor="let generos of book.genres;let last = last"
+            style="color: gray; font-size: 14px;">{{generos}}{{last ? '' : ', '}}</ion-label>
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
