@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar class="colorBack">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-menu-button>
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;">Libros</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #e7edfb;">
+  <ion-list class="background">
+    <ion-item  button lines="none" detail="true" class="itemList" *ngFor="let book  of books" (click)="showBook(book)">
+      <ion-avatar class="avatarList">
+        <img alt="Silhouette of a person's head" src="{{book.cover}}" />
+      </ion-avatar>
+      <ion-label>{{book.name}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

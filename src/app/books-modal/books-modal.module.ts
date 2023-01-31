@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { BooksModalPageRoutingModule } from './books-modal-routing.module';
+
+import { BooksModalPage } from './books-modal.page';
+import { IonRatingStarsModule } from 'ion-rating-stars';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    BooksModalPageRoutingModule,
+    IonRatingStarsModule
+  ],
+  declarations: [BooksModalPage]
+})
+export class BooksModalPageModule {}

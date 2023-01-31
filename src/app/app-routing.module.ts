@@ -27,6 +27,18 @@ const routes: Routes = [
     path: 'menu',
     loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
   },
+  {
+    path: 'books-modal',
+    loadChildren: () => import('./books-modal/books-modal.module').then( m => m.BooksModalPageModule)
+  },
+  {
+    path: 'book-details-modal',
+    loadChildren: () => import('./book-details-modal/book-details-modal.module').then( m => m.BookDetailsModalPageModule)
+  },
+  {
+    path: 'top-diez',
+    loadChildren: () => import('./top-diez/top-diez.module').then( m => m.TopDiezPageModule)
+  }
 ];
 
 @NgModule({

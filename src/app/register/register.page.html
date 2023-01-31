@@ -23,7 +23,7 @@
     <img src="./assets/register.png" />
   </figure>
 
-  <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
+  <form [formGroup]="registerForm" (ngSubmit)="registerUserDb(registerForm.value)">
     
     <ion-item>
       <ion-label position="floating">Nombre</ion-label>
@@ -51,14 +51,14 @@
 
     <ion-item>
       <ion-label position="floating">Apellido</ion-label>
-      <ion-input formControlName="lastName"></ion-input>
+      <ion-input formControlName="last_name"></ion-input>
     </ion-item>
     <!-- Validacion input apellido -->
     <div>
-      <ng-container *ngFor="let validation of validation_register.lastName">
-        <div *ngIf="registerForm.get('lastName')?.hasError(validation.type) &&
-                  (registerForm.get('lastName')?.dirty || 
-                  registerForm.get('lastName')?.touched)">
+      <ng-container *ngFor="let validation of validation_register.last_name">
+        <div *ngIf="registerForm.get('last_name')?.hasError(validation.type) &&
+                  (registerForm.get('last_name')?.dirty || 
+                  registerForm.get('last_name')?.touched)">
                   <ion-note class="error">{{validation.message}}</ion-note>
         </div>
       </ng-container>
@@ -66,17 +66,19 @@
 
     <ion-list>
       <ion-item>
-        <ion-select  class="w-100" interface="popover" formControlName="documentType" placeholder="Seleccionar Documento">
+        <ion-select  class="w-100" interface="popover" formControlName="document_type" placeholder="Seleccionar Documento">
+
           <ion-select-option *ngFor="let valores of type_document"
             value="{{valores.value}}">{{valores.name}}</ion-select-option>
         </ion-select>
       </ion-item>
+
       <!-- Validacion input tipo doc -->
       <div>
-        <ng-container *ngFor="let validation of validation_register.documentType">
-          <div *ngIf="registerForm.get('documentType')?.hasError(validation.type) &&
-                  (registerForm.get('documentType')?.dirty || 
-                  registerForm.get('documentType')?.touched)">
+        <ng-container *ngFor="let validation of validation_register.document_type">
+          <div *ngIf="registerForm.get('document_type')?.hasError(validation.type) &&
+                  (registerForm.get('document_type')?.dirty || 
+                  registerForm.get('document_type')?.touched)">
                   <ion-note class="error"> {{validation.message}}</ion-note>
           </div>
         </ng-container>
@@ -84,14 +86,14 @@
     </ion-list>
     <ion-item>
       <ion-label position="floating">Numero documento</ion-label>
-      <ion-input formControlName="documentNumber"></ion-input>
+      <ion-input formControlName="document_number"></ion-input>
     </ion-item>
     <!-- Validacion input num doc -->
     <div>
-      <ng-container *ngFor="let validation of validation_register.documentNumber">
-        <div *ngIf="registerForm.get('documentNumber')?.hasError(validation.type) &&
-                    (registerForm.get('documentNumber')?.dirty || 
-                    registerForm.get('documentNumber')?.touched)">
+      <ng-container *ngFor="let validation of validation_register.document_number">
+        <div *ngIf="registerForm.get('document_number')?.hasError(validation.type) &&
+                    (registerForm.get('document_number')?.dirty || 
+                    registerForm.get('document_number')?.touched)">
                     <ion-note class="error"> {{validation.message}}</ion-note>
         </div>
       </ng-container>
@@ -101,7 +103,7 @@
       <ion-item>
         <ion-select class="w-100" interface="popover" formControlName="career" placeholder="Seleeciona tu Carrera">
           <ion-select-option *ngFor="let valores of carreras"
-            value="{{valores.name}}">{{valores.name}}</ion-select-option>
+            value="{{valores.value}}">{{valores.name}}</ion-select-option>
         </ion-select>
       </ion-item>
       <!-- Validacion input tipo doc -->

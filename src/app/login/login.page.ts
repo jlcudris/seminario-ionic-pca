@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,FormControl,Validators } from '@angular/forms';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 import { AuthenticateService } from '../services/authenticate.service';
 import { Storage } from '@ionic/storage-angular';
 
@@ -30,6 +30,7 @@ export class LoginPage implements OnInit {
     private authenticate:AuthenticateService,
     private navCtrol: NavController,
     private storage:Storage,
+    private alerController:AlertController
     ) {
     this.loginForm =this.formBuilder.group({
       email :new FormControl(
@@ -73,6 +74,31 @@ export class LoginPage implements OnInit {
 
   redirectRegister(){
     this.navCtrol.navigateForward("/register")
+  }
+
+  loginUserDb(credentials:any){
+   
+    console.log(credentials);
+    this.authenticate.loguinUserDb(credentials).then((res:any) =>{
+      this.errorMessage="";
+      this.storage.set("isUserLoggedIn",true);
+      this.storage.set("user_id",(res.user.id));
+      this.navCtrol.navigateForward("/menu/home")
+
+    }).catch(err=>{
+      this.presentAlert("Opps","Hubo un error",err)
+    })
+  }
+
+  async presentAlert(header:any,subHeader:any,message:any){
+    const alert = await this.alerController.create({
+      header:header,
+      subHeader:subHeader,
+      message:message,
+      buttons:['OK']
+    });
+    await alert.present();
+
   }
 
 }

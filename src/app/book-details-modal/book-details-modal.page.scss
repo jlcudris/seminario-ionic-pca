@@ -1,0 +1,41 @@
+.cover{
+    height: 200px;
+    margin: 0 auto;
+    display: block;
+}
+.saltoLineatitle{
+    white-space: normal;
+}
+
+.center{
+    text-align: center;
+}
+
+.titulo{
+    font-size: 19px;
+    color: gray;
+}
+
+ion-content{
+    --background:#e7edfb;
+}
+.colorBack{
+    --background: #dae5ff
+}
+
+.seguidores{
+    font-size: 25px;
+    // margin-top: 4px;
+}
+
+.imgCenter{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+
+
+.pad-10{
+    padding: 10px;
+}

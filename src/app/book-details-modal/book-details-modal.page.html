@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="colorBack">
+    <ion-buttons slot="start">
+      <ion-button (click)="closeModal()">cerrar
+        <!-- <ion-icon name="close-outline"></ion-icon> -->
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button *ngIf="!like_button" (click)="like()">
+        <ion-icon name="heart"></ion-icon>
+      </ion-button>
+      <ion-button *ngIf="like_button" (click)="disLike()">
+        <ion-icon name="heart-dislike-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #e7edfb;">
+  <h1 class="ion-text-center">{{book.name}}
+  </h1>
+  <img src="{{book.cover}}" alt="" class="cover">
+  <ion-grid class="center">
+    <ion-row>
+      <ion-col class="titulo">Paginas</ion-col>
+      <ion-col class="titulo">Editorial</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col  class="seguidores">{{book.pages}}</ion-col>
+      <ion-col  class="seguidores">{{book.editorial}}</ion-col>
+    </ion-row>
+  </ion-grid>
+  <p class="ion-margin titulo ion-text-justify">{{book.resumen}}</p>
+
+  <p class="ion-margin titulo"><ion-icon class="titulo" name="calendar-outline"></ion-icon> {{book.published_date}}</p>
+  <div class="titulo ion-margin">Generos:</div>
+  <span class="pad-10" *ngFor="let gender of book.genres">
+    <ion-chip>{{gender | titlecase}}</ion-chip>
+  </span>
+</ion-content>
